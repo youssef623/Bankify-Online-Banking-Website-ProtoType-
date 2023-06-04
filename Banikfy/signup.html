@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style media="screen">
+       *,
+      *:before,
+      *:after {
+        padding: 0;
+        color: #e5e5e5;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .Bank{
+        font-weight: bold;
+        font-size: 52px;
+        margin-top: 15px;
+        margin-left: 30px;
+        font-weight: 500;
+        text-align: center ;
+      }
+      body {
+        background-color: #080710;
+      }
+      form {
+        height: 620px;
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.13);
+        position:absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        padding: 50px 35px;
+      }
+      form * {
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      input {
+        display: block;
+        height: 40px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      .button {
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
+        transition: all 300ms ease;
+        margin-top: 450px;
+        margin-left: 1000px;
+        width: 10rem;
+        background-color: #ffffff;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+}
+.button:hover{
+  
+  background-color: #7380ec;
+}
+/*.button:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+}*/
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+}
+
+
+#CloseBankAccountSuccess{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
+    background: #181a1e;
+    border-radius: 2rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#CloseBankAccountSuccess.active{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s ;
+}
+.popupCloseBankAccountSuccess h1{
+    margin-left: 1.8rem;
+    margin-bottom: 1rem;
+}
+.popupCloseBankAccountSuccess button{
+    
+    padding: 1.4rem 1.8rem;
+    border-radius: 1.2rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
+    transition: all 300ms ease;
+    width: 70%;
+    margin-top: 0.5rem;
+    margin-left: 2.5rem;
+    border: 2px solid;
+}
+.popupCloseBankAccountSuccess button:hover{
+    background-color: #41f1b6;
+}
+    </style>
+</head>
+<body>
+    <div class="form">
+        <form>
+            <label id="First">First Name</label>
+            <input type="text" placeholder="" id="firstName">
+            <label>Last Name</label>
+            <input type="text" placeholder="" id="lastName">
+            <label> Phone</label>
+            <input type="tel" placeholder="" id="phoneNumber">
+            <label> Social Security</label>
+            <input type="number" placeholder="" id="socialSecurity">
+            <label> Birth Date</label>
+            <input type="date" placeholder="" id="birthDate">
+            <label> Email</label>
+            <input type="email" placeholder="" id="email">
+            <label> Password</label>
+            <input type="password" placeholder="" id="password">
+        </form>
+        <div>
+            <button id="signUpBtn" onclick="signup()" class="button">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="popupCloseBankAccountSuccess" id="CloseBankAccountSuccess">
+      <h1>SignUp successfully</h1>
+      <div class="close">
+        <button onclick="SignUpClose()" id="closeSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+    <script>
+      function signup(){
+
+        var popup = document.getElementById('CloseBankAccountSuccess');
+        popup.classList.toggle('active')
+      }
+      function SignUpClose(){
+
+        var popup = document.getElementById('CloseBankAccountSuccess');
+        popup.classList.toggle('active')
+      }
+    </script>
+</body>
+</html>

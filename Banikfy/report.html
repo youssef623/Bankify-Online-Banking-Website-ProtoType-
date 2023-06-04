@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./reportStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="home.html" >
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditcard.html">
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit cards</h3>
+            </a>
+            <a href="loans.html">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loans</h3>
+            </a>
+            <a href="payments.html" >
+              <span class="material-symbols-outlined">payments</span>
+              <h3>Payments</h3>
+            </a>
+            <a href="notifications.html">
+              <span class="material-symbols-outlined">notifications</span>
+              <h3>Notifications</h3>
+              <span class="notifications-count">15</span>
+            </a>
+            <a href="report.html" class="active">
+              <span class="material-symbols-outlined">report</span>
+              <h3>Report</h3>
+            </a>
+            <a href="clientSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <div class="report-credit-card">
+          <div class="header">
+            <h1>Credit Card Issue</h1>
+          </div>
+          <div class="form">
+            <h2>Choose Credit Card</h2>
+            <select>
+              <option value="option1">5482-7423-4079-2246</option>
+              <option value="option2">8949-4651-6548-4871</option>
+            </select>
+            <h2>Type of Issue</h2>
+            <select>
+              <option value="option1">Credit Card Theft</option>
+              <option value="option2">Credit Card Loss</option>
+              <option value="option2">Credit Card Damage</option>
+            </select>
+            <h2>Description</h2>
+            <input type="text" placeholder="Description" id="Description">
+            <div class="button">
+              <button onclick="ReportCreditCard()" id="makeTransfer"><h3>Report</h3></button>
+            </div>
+        </div>
+      </main>
+      <div class="right">
+        <div class="report-technical">
+          <div class="header">
+            <h1>Technical Issue</h1>
+          </div>
+          <div class="form">
+            <h2>Request Type</h2>
+            <select>
+              <option value="option1">Complaint</option>
+              <option value="option2">Inquiry</option>
+              <option value="option2">suggestion</option>
+            </select>
+            <h2>Description</h2>
+            <input type="text" placeholder="Description">
+            <div class="button">
+              <button onclick="ReportTechnical()"><h3>Report</h3></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popupCreditCardSuccess" id="creditCardReportSuccess">
+      <h2>Report Submitted successfully</h2>
+      <h2 style="color: red;">Credit Card Disabled</h2>
+      <div class="applyForReplacement">
+        <button onclick="applyForReplacement()" id="applyForReplacement"><h3>Apply For Replacement</h3></button>
+      </div>
+      <div class="close">
+        <button onclick="closeReportCreditCardSuccess()" id="closeSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+    <div class="applyForReplacementSuccess" id="applyForReplacementSuccess">
+      <h1>Replacement Request Submitted successfully</h1>
+      <div class="close">
+        <button onclick="closeReplacementCreditCardSuccess()" id="closeSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+    <div class="popupTechnicalSuccess" id="popupTechnicalSuccess">
+      <h1>Report Submitted successfully</h1>
+      <div class="close">
+        <button onclick="closeReportSubmittedSuccess()" id="closeSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+
+    <script>
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+      function ReportCreditCard(){
+          var blur = document.getElementById('blur');
+          blur.classList.toggle('active');
+          var popup = document.getElementById('creditCardReportSuccess');
+          popup.classList.toggle('active')
+      }
+      function closeReportCreditCardSuccess(){
+          var blur = document.getElementById('blur');
+          blur.classList.toggle('active');
+          var popup = document.getElementById('creditCardReportSuccess');
+          popup.classList.toggle('active')
+      }
+      function applyForReplacement(){
+        var popup = document.getElementById('creditCardReportSuccess');
+        popup.classList.toggle('active')
+        var popup = document.getElementById('applyForReplacementSuccess');
+        popup.classList.toggle('active')
+      }
+      function closeReplacementCreditCardSuccess(){
+          var blur = document.getElementById('blur');
+          blur.classList.toggle('active');
+          var popup = document.getElementById('applyForReplacementSuccess');
+          popup.classList.toggle('active')
+      }
+      function ReportTechnical(){
+          var blur = document.getElementById('blur');
+          blur.classList.toggle('active');
+          var popup = document.getElementById('popupTechnicalSuccess');
+          popup.classList.toggle('active')
+      }
+      function closeReportSubmittedSuccess(){
+           var blur = document.getElementById('blur');
+          blur.classList.toggle('active');
+          
+          var popup = document.getElementById('popupTechnicalSuccess');
+          popup.classList.toggle('active')
+      }
+    </script>
+  </body>
+</html>

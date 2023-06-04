@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./creditcardStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="home.html" >
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditcard.html"class="active">
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit cards</h3>
+            </a>
+            <a href="loans.html">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loans</h3>
+            </a>
+            <a href="payments.html">
+              <span class="material-symbols-outlined">payments</span>
+              <h3>Payments</h3>
+            </a>
+            <a href="notifications.html">
+              <span class="material-symbols-outlined">notifications</span>
+              <h3>Notifications</h3>
+              <span class="notifications-count">15</span>
+            </a>
+            <a href="report.html">
+              <span class="material-symbols-outlined">report</span>
+              <h3>Report</h3>
+            </a>
+            <a href="clientSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <h1>Credit Cards</h1>
+        <div class="credit-cards">
+            <div class="card">
+                <span class="material-symbols-outlined">
+                    credit_card
+                    </span>
+                <div class="card-info">
+                    <div class="card-number">
+                        <h1>5482-7423-4079-2246</h1>
+                    </div>
+                    <div class="card-exp-cvv">
+                        <div class="cvv">
+                            <h3>CVV</h3>
+                            <h3>562</h3>
+                        </div>
+                        <div class="EXP">
+                            <h3>EXP</h3>
+                            <h3>20/5</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <span class="material-symbols-outlined">
+                    credit_card
+                </span>
+                <div class="card-info">
+                    <div class="card-number">
+                        <h1>8949-4651-6548-4871</h1>
+                    </div>
+                    <div class="card-exp-cvv">
+                        <div class="cvv">
+                            <h3>CVV</h3>
+                            <h3>562</h3>
+                        </div>
+                        <div class="EXP">
+                            <h3>EXP</h3>
+                            <h3>20/5</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "recent-transactions">
+          <h2>Credit card Transactions</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Amount<thd>
+                <th>Paid By</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>25052</td>
+                <td>9-5-2023</td>
+                <td>$56.35</td>
+                <td>Credit Card</td>
+              </tr>
+              <tr>
+                <td>14703</td>
+                <td>2-4-2023</td>
+                <td>EGP 356.64</td>
+                <td>Credit Card</td>
+              </tr>
+              <tr>
+                <td>95687</td>
+                <td>10-3-2023</td>
+                <td>$845.54</td>
+                <td>Credit Card</td>
+              </tr>
+              <tr>
+                <td>32698</td>
+                <td>24-1-2023</td>
+                <td>$56.35</td>
+                <td>Credit Card</td>
+              </tr>
+              <tr>
+                <td>70370</td>
+                <td>15-1-2023</td>
+                <td>€894</td>
+                <td>Credit Card</td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="#" class="showall" onclick="displayError()">View other Credit card transactions</a>
+          <p id="error-bank-account" style="color: red; margin-left: 22.5rem; display: none;">This is all your Credit Cards Transactions</p>
+        </div>
+      </main>
+      <div class="right">
+        <div class="viewCreditPoints">
+          <a href="#home.html"></a>
+          <span class="material-symbols-outlined">
+            hotel_class 
+            </span>
+            <div class="creditPointsText">
+              <h1>Credit Points</h1>
+            </div>
+            <div class="creditPointsNumber">
+              <h1>10,231</h1>
+            </div>
+            <button class="button" onclick="redeem()"><h3>Redeem</h3></button>
+        </div>
+        <div class="item apply-for-credit-cards">
+          <span class="material-symbols-outlined">
+            description
+            </span>
+          <h3><a href="#" onclick="applyForCreditCardopenPopUp()">Apply for Credit Card</a></h3>
+        </div>
+        <div class="item disable-credit-card">
+          <span class="material-symbols-outlined">
+            credit_card_off
+            </span>
+          <h3><a href="#" onclick="disableCreditCardPopUp()">Disable Credit Card</a></h3>
+        </div>
+      </div>
+    </div>
+    <div class="applyForCreditCardPopUp" id="popup">
+      <label for="Nationalid">National Id</label>
+      <input type="text" placeholder="National Id" />
+
+      <label for="RequestedAmount">Requested Amount</label>
+      <input type="number" placeholder="Requested Amount" />
+
+      <label for="NetmonthlyIncome">Net monthly Income</label>
+      <input type="number" placeholder="Net monthly Income" />
+
+      <label for="EmployerName">Employer Name</label>
+      <input type="text" placeholder="Employer Name"/>
+
+      <label for="EmployerName">Job Title</label>
+      <input type="text" placeholder="Job Title"/>
+
+      <div class="close-button">
+        <button id="close-button-popUP" onclick="closePopUp()">Close</button>
+      </div>
+      <div class="confirm-Application-btn">
+        <button id="confirmApplication-btn" onclick="confirmApplication()">Confirm Application</button>
+      </div>
+
+    </div>
+
+    <div class="popupOpenBankAccountSuccess" id="OpenBankAccountSuccess">
+      <h1>Application Submitted successfully</h1>
+      <div class="close">
+        <button onclick="closePopUpSuccess()" id="openSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+
+    <div class="disableCreditCardPopUp" id="disablePopup">
+
+
+      <select>
+        <option value="option1">5482-7423-4079-2246</option>
+        <option value="option2">8949-4651-6548-4871</option>
+      </select>
+
+      <div class="close-button">
+        <button id="close-button-popUP" onclick="closeDisablePopUp()">Close</button>
+      </div>
+      <div class="confirm-Application-btn">
+        <button id="confirmApplication-btn" onclick="confirmCreditCardDisable()">Disable Credit Card</button>
+      </div>
+
+    </div>
+
+
+    <div class="disableCreditSuccessPopUp" id="disableCreditCardSuccessPopUp">
+      <h1>Credit Card Disabled successfully</h1>
+      <div class="close">
+        <button onclick="closeDisablePopUpSuccess()" id="openSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+    <script>
+      function applyForCreditCardopenPopUp(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+      }
+      function closePopUp(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+      }
+      function confirmApplication(){
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+        var OpenBankAccountSuccess = document.getElementById('OpenBankAccountSuccess');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function closePopUpSuccess(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var OpenBankAccountSuccess = document.getElementById('OpenBankAccountSuccess');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+      function redeem(){
+        window.location.href = "redeem.html";
+      }
+      function homepage(){
+          window.location.href = "home.html";
+      }
+      function disableCreditCardPopUp(){
+        
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var OpenBankAccountSuccess = document.getElementById('disablePopup');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function closeDisablePopUp(){
+        
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var OpenBankAccountSuccess = document.getElementById('disablePopup');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function confirmCreditCardDisable(){
+        
+        var OpenBankAccountSuccess = document.getElementById('disablePopup');
+        OpenBankAccountSuccess.classList.toggle('active')
+        
+        var OpenBankAccountSuccess = document.getElementById('disableCreditCardSuccessPopUp');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function closeDisablePopUpSuccess(){
+        
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        
+        var OpenBankAccountSuccess = document.getElementById('disableCreditCardSuccessPopUp');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function displayError(){
+        
+        const errorMessage = document.getElementById("error-bank-account");
+          errorMessage.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

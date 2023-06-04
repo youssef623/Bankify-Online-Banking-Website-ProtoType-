@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./notificationsStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="home.html" >
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditcard.html">
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit cards</h3>
+            </a>
+            <a href="loans.html">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loans</h3>
+            </a>
+            <a href="payments.html" >
+              <span class="material-symbols-outlined">payments</span>
+              <h3>Payments</h3>
+            </a>
+            <a href="#" class="active">
+              <span class="material-symbols-outlined">notifications</span>
+              <h3>Notifications</h3>
+              <span class="notifications-count" style="color: white;">15</span>
+            </a>
+            <a href="report.html" >
+              <span class="material-symbols-outlined">report</span>
+              <h3>Report</h3>
+            </a>
+            <a href="clientSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        
+        <div class="Announcements">
+          <span class="material-symbols-outlined">
+            campaign
+            </span>
+          <h1 style="color: red;">Bank Announcements</h1>
+          <div class="Announcement">
+            <ul class="cool-list">
+              <li>Limited-time offer: Open a savings account today and receive a cash bonus.</li>
+              <li>New feature alert: Introducing instant fund transfers between accounts within our bank!</li>
+              <li>Account holders: Kindly update your contact information to ensure seamless communication with the bank.</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="Notifications-Reminders">
+          
+          <div class="Notifications">
+            <span class="material-symbols-outlined">
+              notification_important
+              </span>
+            <h1>Notifications</h1>
+            <div class="notifications-box">
+              <ul class="cool-list">
+                <li>Your account has been temporarily locked due to suspicious activity.</li>
+                <li>Your account has been credited with $500.00. Thank you for your payment!</li>
+                <li>A deposit of $6,462.98 has been made to your account ending in 6545.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="Reminders">
+            <span class="material-symbols-outlined">
+              release_alert
+              </span>
+            <h1>Issues</h1>
+            <div class="Reminders-box">
+              <ul class="cool-list">
+                <li>Issue with ID 22345 has been resolved</li>
+                <li>Issue with ID 33637 is still under inspection</li>
+                <li>Suggestion with ID 4447 will be taken into consideration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+    </div>
+    
+
+
+    <script>
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+    </script>
+  </body>
+</html>

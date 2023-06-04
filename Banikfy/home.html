@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./homeStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="#" class="active">
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditcard.html">
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit cards</h3>
+            </a>
+            <a href="loans.html">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loans</h3>
+            </a>
+            <a href="payments.html">
+              <span class="material-symbols-outlined">payments</span>
+              <h3>Payments</h3>
+            </a>
+            <a href="notifications.html">
+              <span class="material-symbols-outlined">notifications</span>
+              <h3>Notifications</h3>
+              <span class="notifications-count">15</span>
+            </a>
+            <a href="report.html">
+              <span class="material-symbols-outlined">report</span>
+              <h3>Report</h3>
+            </a>
+            <a href="clientSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <h1>Home</h1>
+        <div class="date">
+          <span>9/5/2023</span>
+        </div>
+        <div class="accounts-balance">
+          <div class="balance">
+            <span class="material-symbols-outlined">
+              account_balance_wallet
+              </span>
+              <div class="total-balance">
+                <h3>Balance</h3>
+                <h1>EGP 1,590,465</h1>
+              </div>
+              <small class ="blank-text">Bank Account : 9879651321651</small>
+          </div>
+          <div class="balance">
+            <span class="material-symbols-outlined">
+              account_balance_wallet
+              </span>
+              <div class="total-balance">
+                <h3>Balance</h3>
+                <h1>$ 89,465</h1>
+              </div>
+              <small class ="blank-text">Bank Account : 5615183218651</small>
+          </div>
+          <div class="balance">
+            <span class="material-symbols-outlined">
+              account_balance_wallet
+              </span>
+              <div class="total-balance">
+                <h3>Balance</h3>
+                <h1>€ 30,549</h1>
+              </div>
+              <small class ="blank-text">Bank Account : 5648493519854</small>
+          </div>
+        </div>
+        <div class = "recent-transactions">
+          <h2>Recent Transactions</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Amount<thd>
+                <th>Paid By</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>65164</td>
+                <td>9-5-2023</td>
+                <td>$56.35</td>
+                <td>5615183218651</td>
+              </tr>
+              <tr>
+                <td>59489</td>
+                <td>2-4-2023</td>
+                <td>EGP 356.64</td>
+                <td>9879651321651</td>
+              </tr>
+              <tr>
+                <td>98756</td>
+                <td>10-3-2023</td>
+                <td>$845.54</td>
+                <td>5615183218651</td>
+              </tr>
+              <tr>
+                <td>23156</td>
+                <td>24-1-2023</td>
+                <td>$56.35</td>
+                <td>5615183218651</td>
+              </tr>
+              <tr>
+                <td>56989</td>
+                <td>15-1-2023</td>
+                <td>€894</td>
+                <td>5648493519854</td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="#" onclick="displayError()" class="showall">View other Bank account transactions</a>
+          <p id="error-bank-account" style="color: red; margin-left: 22.5rem; display: none;">This is all your bank accounts Transactions</p>
+        </div>
+      </main>
+      <div class="right">
+        <div class="upcoming-reminders">
+          <h2>Reminders</h2>
+          <div class="reminders">
+            <div class="reminder">
+                <p><b>Electricity Bill is due on 10-5-2023</b></p>
+                <small class="blank-text">1 hour ago</small>
+            </div>
+            <div class="reminder">
+                <p><b>Credit Card Bill is due on 20-5-2023</b></p>
+                <small class="blank-text">3 hours ago</small>
+            </div>
+            <div class="reminder">
+                <p><b>Loan Bill is due on 26-5-2023</b></p>
+                <small class="blank-text">5 hours ago</small>
+            </div>
+          </div>
+        </div>
+        <div class="right-bottom">
+          <div class="item open">
+            <span class="material-symbols-outlined">
+              lock_open_right
+              </span>
+            <h3><a href="#" onclick="openBankAccount()">Open Bank Account</a></h3>
+          </div>
+          <div class="item close">
+            <span class="material-symbols-outlined">
+              lock
+              </span>
+            <h3><a href="#" onclick="closeBankAccount()">close Bank Account</a></h3>
+          </div>
+
+          <div class="item transfer-money">
+            <span class="material-symbols-outlined">
+              currency_exchange
+              </span>
+            <h3><a href="transfer.html">Transfer Money</a></h3>
+        </div>
+
+          
+          <div class="item set-reminder">
+              <span class="material-symbols-outlined">
+                edit_notifications
+              </span>
+              <h3><a href="#" onclick="setReminder()">Add Reminder</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--popUp for set Reminder-->
+    <div class="popupID" id="popup">
+      <label for="Reminder">Reminder Description</label>
+      <input type="text" placeholder="Reminder Description" />
+
+      <label for="dueDate">Due Date</label>
+      <input type="date"/>
+      <button id="setReminder-btn" onclick="setReminder()">Set Reminder</button>
+    </div>
+    
+    <!--popUp for opening Bank Account-->
+    <div class="popupOpenBankAccount" id="openBankAccountPopup">
+      <label for="Reminder">Open Bank Account</label>
+      <select>
+        <option value="option1">Savings Account</option>
+        <option value="option2">Current Account</option>
+        <option value="option3">Business Account</option>
+      </select>
+      <div class="password">
+        <input type="password" placeholder="Password" id="openBankPassword" />
+      </div>
+      <p id="error-message-open" style="color: red; display: none;">Incorrect password.</p>
+      <div class="close-button">
+        <button id="open-btn-popup-closeBankAccount" onclick="openBankAccount()">Close</button>
+      </div>
+      <div class="open-BankAccount-btn">
+        <button id="setReminder-btn" onclick="openBankAccountCheck()">Open Bank Account</button>
+      </div>
+    </div>
+
+    <div class="popupOpenBankAccountSuccess" id="OpenBankAccountSuccess">
+      <h1>Account Opened successfully</h1>
+      <div class="close">
+        <button onclick="openBankAccountSuccess()" id="openSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+    <!--popUp for closing Bank Account-->
+    <div class="popupCloseBankAccount" id="closeBankAccountPopup">
+      <label for="Reminder">Close Bank Account</label>
+      <select>
+        <option value="option1">5648493519854</option>
+        <option value="option2">5615183218651</option>
+        <option value="option3">9879651321651</option>
+      </select>
+      <div class="password">
+        <input type="password" placeholder="Password" id="closeBankPassword" />
+      </div>
+      <p id="error-message" style="color: red; display: none;">Incorrect password.</p>
+      <div class="close-button">
+        <button id="close-btn-popup-closeBankAccount" onclick="closeOfCloseBankAccount()">Close</button>
+      </div>
+      <div class="close-BankAccount-btn">
+        <button id="setReminder-btn" onclick="closeBankAccountCheck()">Close Bank Account</button>
+      </div>
+    </div>
+
+    <div class="popupCloseBankAccountSuccess" id="CloseBankAccountSuccess">
+      <h1>Account Closed successfully</h1>
+      <div class="close">
+        <button onclick="closeBankAccountSuccess()" id="closeSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+
+    <script>
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+      function setReminder(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+      }
+      function openBankAccount(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('openBankAccountPopup');
+        popup.classList.toggle('active')
+      }
+      function openBankAccountCheck(){
+        const password = document.getElementById("openBankPassword").value;
+        if(password == "client")
+        {
+          var popup = document.getElementById('openBankAccountPopup');
+          popup.classList.toggle('active')
+          
+          var openBankAccountSuccess = document.getElementById('OpenBankAccountSuccess');
+          openBankAccountSuccess.classList.toggle('active');
+        }
+        else{
+          const errorMessage = document.getElementById("error-message-open");
+          errorMessage.style.display = "block";
+        }
+      }
+      function openBankAccountSuccess(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var OpenBankAccountSuccess = document.getElementById('OpenBankAccountSuccess');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function closeBankAccount(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('closeBankAccountPopup');
+        popup.classList.toggle('active')
+      }
+      function closeOfCloseBankAccount(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('closeBankAccountPopup');
+        popup.classList.toggle('active')
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.style.display = "none";
+      }
+      function closeBankAccountCheck(){
+        const password = document.getElementById("closeBankPassword").value;
+        if(password == "client")
+        {
+          var popup = document.getElementById('closeBankAccountPopup');
+          popup.classList.toggle('active');
+          var closeSuccess =  document.getElementById('CloseBankAccountSuccess');
+          closeSuccess.classList.toggle('active');
+        }
+        else{
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.style.display = "block";
+        }
+      }
+      function closeBankAccountSuccess(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var closeSuccess =  document.getElementById('CloseBankAccountSuccess');
+        closeSuccess.classList.toggle('active');
+      }
+      function displayError(){
+        
+          const errorMessage = document.getElementById("error-bank-account");
+          errorMessage.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

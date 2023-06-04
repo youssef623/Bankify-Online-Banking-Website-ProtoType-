@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banker Client</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./bankerClientStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="bankerHome.html">
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditCardsRequests.html">
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit Cards Requests</h3>
+            </a>
+            <a href="loansRequests.html">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loan Requests</h3>
+            </a>
+            <a href="clientsBanker.html">
+              <span class="material-symbols-outlined">groups</span>
+              <h3>Clients</h3>
+            </a>
+            <a href="reportsBanker.html">
+              <span class="material-symbols-outlined">report</span>
+              <h3>Reports</h3>
+            </a>
+            <a href="bankerSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <h1>Mohamed Hassan</h1>
+        <div class="accounts-balance">
+          <div class="balance">
+            <span class="material-symbols-outlined">
+              account_balance_wallet
+              </span>
+              <div class="total-balance">
+                <h3>Balance</h3>
+                <h1>EGP 1,590,465</h1>
+              </div>
+              <small class ="blank-text">Bank Account : 9879651321651</small>
+          </div>
+          <div class="balance">
+            <span class="material-symbols-outlined">
+              account_balance_wallet
+              </span>
+              <div class="total-balance">
+                <h3>Balance</h3>
+                <h1>$ 89,465</h1>
+              </div>
+              <small class ="blank-text">Bank Account : 5615183218651</small>
+          </div>
+          <div class="balance">
+            <span class="material-symbols-outlined">
+              account_balance_wallet
+              </span>
+              <div class="total-balance">
+                <h3>Balance</h3>
+                <h1>€ 30,549</h1>
+              </div>
+              <small class ="blank-text">Bank Account : 5648493519854</small>
+          </div>
+        </div>
+        <div class = "recent-transactions">
+          <h2>Recent Transactions</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Amount<thd>
+                <th>Paid By</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>65164</td>
+                <td>9-5-2023</td>
+                <td>$56.35</td>
+                <td>5615183218651</td>
+                <td><a href="#"class="primary">Details</a></td>
+              </tr>
+              <tr>
+                <td>59489</td>
+                <td>2-4-2023</td>
+                <td>EGP 356.64</td>
+                <td>9879651321651</td>
+                <td><a href="#"class="primary">Details</a></td>
+              </tr>
+              <tr>
+                <td>98756</td>
+                <td>10-3-2023</td>
+                <td>$845.54</td>
+                <td>5615183218651</td>
+                <td><a href="#"class="primary">Details</a></td>
+              </tr>
+              <tr>
+                <td>23156</td>
+                <td>24-1-2023</td>
+                <td>$56.35</td>
+                <td>5615183218651</td>
+                <td><a href="#"class="primary">Details</a></td>
+              </tr>
+              <tr>
+                <td>56989</td>
+                <td>15-1-2023</td>
+                <td>€894</td>
+                <td>5648493519854</td>
+                <td><a href="#"class="primary">Details</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="#" class="showall">Show All</a>
+        </div>
+      </main>
+
+      <div class="right">
+        <div class="balance">
+          <span class="material-symbols-outlined">currency_exchange</span>
+              <div class="total-balance">
+                <h3>Loan</h3>
+                <h1>EGP 1,950,00</h1>
+              </div>
+              <small class ="blank-text">Loan Type : Personal</small>
+        </div>
+        <div class="balance">
+          <span class="material-symbols-outlined">currency_exchange</span>
+              <div class="total-balance">
+                <h3>Loan</h3>
+                <h1>EGP 1,450,00</h1>
+              </div>
+              <small class ="blank-text">Loan Type : Personal</small>
+        </div>
+
+
+        <div class="item open">
+          <span class="material-symbols-outlined">credit_card</span>
+          <h3><a href="#" onclick="viewCreditCards()">View Credit Cards</a></h3>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="popupID" id="popup">
+      <div class="card">
+        <span class="material-symbols-outlined">credit_card</span>
+        <div class="card-info">
+            <div class="card-number">
+                <h1>5482-7423-4079-2246</h1>
+            </div>
+            <div class="card-exp-cvv">
+                <div class="cvv">
+                    <h3>CVV</h3>
+                    <h3>562</h3>
+                </div>
+                <div class="EXP">
+                    <h3>EXP</h3>
+                    <h3>20/5</h3>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="material-symbols-outlined">credit_card</span>
+        <div class="card-info">
+            <div class="card-number">
+                <h1>5482-7423-4079-2246</h1>
+            </div>
+            <div class="card-exp-cvv">
+                <div class="cvv">
+                    <h3>CVV</h3>
+                    <h3>562</h3>
+                </div>
+                <div class="EXP">
+                    <h3>EXP</h3>
+                    <h3>20/5</h3>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="close-BankAccount-btn">
+        <button id="setReminder-btn" onclick="closeCreditCard()">Close Bank Account</button>
+      </div>
+    </div>
+
+
+
+    <script>
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+      function viewCreditCards(){
+        
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+      }
+      function closeCreditCard(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+      }
+    </script>
+  </body>
+</html>

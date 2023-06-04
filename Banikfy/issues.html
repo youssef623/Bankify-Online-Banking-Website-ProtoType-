@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./issues.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="adminHome2.html" >
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="manageBankers.html">
+                <span class="material-symbols-outlined">hail</span>
+                <h3>Manage clients and bankers</h3>
+            </a>
+            <a href="issues.html" class="active">
+              <span class="material-symbols-outlined">
+                bug_report
+                </span>
+              <h3>Issues</h3>
+            </a>
+            <a href="settingsAdmin.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        
+        <div class = "recent-requests">
+            <h2>Technical Issues</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Issue ID</th>
+                  <th>Type</th>
+                  <th>Brief Description<th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>65482</td>
+                  <td>Complaint</td>
+                  <td>The icons are blurred and I can not press on them</td>
+                  <td><a href="#" onclick="accept()" style="color: #41f1b6;">Mark As Resolved</a></td>
+                </tr>
+                <tr>
+                  <td>49562</td>
+                  <td>Complaint</td>
+                  <td>I am unable to log in it tells me authentication failed</td>
+                  <td><a href="#" onclick="accept()" style="color: #41f1b6;">Mark As Resolved</a></td>
+                </tr>
+                <tr>
+                  <td>56498</td>
+                  <td>Suggestion</td>
+                  <td>I have an idea for a new feature that allows me to pay in shops using a scan of my app instead of my card</td>
+                  <td><a href="#" onclick="accept()" style="color: #41f1b6;">Mark As Resolved</a></td>
+                </tr>
+                <tr>
+                  <td>65148</td>
+                  <td>Complaint</td>
+                  <td>My transaction took one minute to load and then I got page not found</td>
+                  <td><a href="#" onclick="accept()" style="color: #41f1b6;">Mark As Resolved</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </main>
+    </div>
+    
+    
+    <div class="markAsSolved" id="markAsSolvedID">
+        <h1>Issue Solved Notifications Sent Successfully</h1>
+        <div class="close">
+          <button onclick="closeissue()" id="closeSuccess"><h3>Close</h3></button>
+        </div>
+    </div>
+
+    
+
+    <script>
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+      function accept()
+      {
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('markAsSolvedID');
+        popup.classList.toggle('active')
+      }
+      
+     function closeissue(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('markAsSolvedID');
+        popup.classList.toggle('active')
+     }
+    </script>
+  </body>
+</html>

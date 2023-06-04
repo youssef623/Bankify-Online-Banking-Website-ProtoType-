@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./paymentsStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="home.html" >
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditcard.html">
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit cards</h3>
+            </a>
+            <a href="loans.html">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loans</h3>
+            </a>
+            <a href="payments.html" class="active">
+              <span class="material-symbols-outlined">payments</span>
+              <h3>Payments</h3>
+            </a>
+            <a href="notifications.html">
+              <span class="material-symbols-outlined">notifications</span>
+              <h3>Notifications</h3>
+              <span class="notifications-count">15</span>
+            </a>
+            <a href="report.html">
+              <span class="material-symbols-outlined">report</span>
+              <h3>Report</h3>
+            </a>
+            <a href="clientSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <div class="accounts-balance">
+          <div class="balance">
+              <div class="total-balance">
+                <div class="balance-text">
+                  <h1>Balance</h1>
+                </div>
+                <h1>EGP 1,590,465</h1>
+              </div>
+              <small class ="blank-text">Bank Account : 9879651321651</small>
+          </div>
+        </div>
+        <div class = "recent-transactions">
+          <h2>Payment History</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Payment Name</th>
+                <th>Amount<thd>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>26-5-2023</td>
+                <td>H & M Grand Mall</td>
+                <td>EGP 850</td>
+              </tr>
+              <tr>
+                <td>24-4-2023</td>
+                <td>Bershka City Stars</td>
+                <td>EGP 356.64</td>
+              </tr>
+              <tr>
+                <td>22-4-2023</td>
+                <td>Zara Open Air Mall</td>
+                <td>EGP 845.54</td>
+              </tr>
+              <tr>
+                <td>16-3-2023</td>
+                <td>Water Bill</td>
+                <td>EGP 96.35</td>
+              </tr>
+              <tr>
+                <td>1-3-2023</td>
+                <td>Electricity Bill</td>
+                <td>EGP 5,200</td>
+              </tr>
+              <tr>
+                <td>20-2-2023</td>
+                <td>Stradivarius Cairo Fesival City</td>
+                <td>EGP 2,500</td>
+              </tr>
+              <tr>
+                <td>4-1-2023</td>
+                <td>Shahid </td>
+                <td>EGP 600</td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="#" onclick="displayError()" class="showall">Show All</a>
+          <p id="error-bank-account" style="color: red; margin-left: 27rem; display: none;">This is all your Payments</p>
+        </div>
+      </main>
+      <div class="right">
+        <div class="item pay-cc">
+          <span class="material-symbols-outlined">
+            Paid
+          </span>
+          <h3><a href="#" onclick="payForCreditCardPopUp()">Pay for Credit Card Bill</a></h3>
+        </div>
+        <div class="item pay-loans">
+          <span class="material-symbols-outlined">
+            Paid
+          </span>
+          <h3><a href="#" onclick="payForLoansPopUp()">Pay for loans</a></h3>
+        </div>
+        <div class="item pay-loans">
+          <span class="material-symbols-outlined">
+            Paid
+          </span>
+          <h3><a href="#" onclick="payForBills()">Pay for Bills</a></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="Pay-For-Credit-Card" id="creditCardPopup">
+
+      <label for="fromAccount">From Account</label>
+      <select>
+        <option value="option1">9879651321651</option>
+        <option value="option2">5615183218651</option>
+        <option value="option3">5648493519854</option>
+      </select>
+      
+      <label for="toCreditCard">To Credit Card</label>
+      <select>
+        <option value="option1">5482-7423-4079-2246</option>
+        <option value="option2">8949-4651-6548-4871</option>
+      </select>
+      
+      
+      <label for="Amount">Amount</label>
+      <select id="creditCard-Partial">
+        <option value="option1">Fully</option>
+        <option value="option2">Partial</option>
+      </select>
+      <input type="number" placeholder="Amount" id="amountPayForCreditCard"/>
+
+      <p id="error-message-creditCard" style="color: red; display: none;">Fill out missing Data</p>
+      <div class="close-button">
+        <button id="close-button-popUP" onclick="closeCreditCardPopUp()">Close</button>
+      </div>
+
+      <div class="confirm-Application-btn">
+        <button id="confirmApplication-btn" onclick="confirmCreditCardPayment()">Confirm Payment</button>
+      </div>
+
+    </div>
+
+
+    <div class="Pay-For-loans" id="loansPopup">
+
+      <label for="fromAccount">From Account</label>
+      <select>
+        <option value="option1">9879651321651</option>
+        <option value="option2">5615183218651</option>
+        <option value="option3">5648493519854</option>
+      </select>
+      
+      
+      <label for="Amount">Amount</label>
+      <input type="number" placeholder="Amount" id="amountLoan"/>
+
+      
+      <label for="OTP">OTP</label>
+      <input type="number" placeholder="OTP" id="OTPLoan"/>
+
+      <p id="error-message-loans" style="color: red; display: none;">Fill out missing Data</p>
+      <div class="close-button">
+        <button id="close-button-popUP" onclick="closeLoanPopUp()">Close</button>
+      </div>
+
+      <div class="confirm-Application-btn">
+        <button id="confirmApplication-btn" onclick="confirmLoanPayment()">Confirm Payment</button>
+      </div>
+
+    </div>
+
+    <div class="Pay-For-bills" id="billsPopup">
+
+      <label for="fromAccount">From Account</label>
+      <select>
+        <option value="option1">9879651321651</option>
+        <option value="option2">5615183218651</option>
+        <option value="option3">5648493519854</option>
+      </select>
+      <label for="fromACreditCard">From Credit Card</label>
+      <select>
+        <option value="option1">5482-7423-4079-2246</option>
+        <option value="option2">8949-4651-6548-4871</option>
+      </select>
+      <label for="billType">Bill Type</label>
+      <select>
+        <option value="option1">gas</option>
+        <option value="option2">water</option>
+        <option value="option2">electricity</option>
+        <option value="option2">telephone</option>
+      </select>
+      
+      <label for="Amount">Amount</label>
+      <input type="number" placeholder="Amount" id="amountBill"/>
+
+      
+      <label for="OTP">OTP</label>
+      <input type="number" placeholder="OTP" id="otpBill"/>
+
+      <p id="error-message-bills" style="color: red; display: none;">Fill out missing Data</p>
+
+      <div class="close-button">
+        <button id="close-button-popUP" onclick="closeBillPopUp()">Close</button>
+      </div>
+
+      <div class="confirm-Application-btn">
+        <button id="confirmApplication-btn" onclick="confirmBillPayment()">Confirm Payment</button>
+      </div>
+
+    </div>
+
+
+    <div class="popupPaymentSuccess" id="popupPaymentSuccesse">
+      <h1>Payment Done Successfully</h1>
+      <div class="close">
+        <button onclick="closePaymentSuccess()" id="openSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+    <script>
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+      function payForCreditCardPopUp(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('creditCardPopup');
+        popup.classList.toggle('active')
+      }
+      function payForLoansPopUp(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('loansPopup');
+        popup.classList.toggle('active')
+      }
+      function closeCreditCardPopUp(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('creditCardPopup');
+        popup.classList.toggle('active')
+      }
+      function confirmCreditCardPayment(){
+        const partial_fully = document.getElementById("creditCard-Partial");
+        const amountPayForCreditCard= document.getElementById("amountPayForCreditCard").value;
+        var selected = partial_fully.selectedIndex;
+        if(selected == 0)
+        {
+          
+          var popup = document.getElementById('creditCardPopup');
+          popup.classList.toggle('active');
+          var OpenBankAccountSuccess = document.getElementById('popupPaymentSuccesse');
+          OpenBankAccountSuccess.classList.toggle('active')
+        }
+        else
+        {
+          if(amountPayForCreditCard == "")
+          {
+            const errorMessage = document.getElementById("error-message-creditCard");
+            errorMessage.style.display = "block";
+          }
+          else
+          {
+            var popup = document.getElementById('creditCardPopup');
+            popup.classList.toggle('active');
+            var OpenBankAccountSuccess = document.getElementById('popupPaymentSuccesse');
+            OpenBankAccountSuccess.classList.toggle('active')
+          }
+        }
+      }
+      function closePaymentSuccess(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var OpenBankAccountSuccess = document.getElementById('popupPaymentSuccesse');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function closeLoanPopUp(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('loansPopup');
+        popup.classList.toggle('active')
+      }
+      function confirmLoanPayment(){
+        const amountLoan = document.getElementById("amountLoan").value;
+        const OTPloan = document.getElementById("amountLoan").value;
+        if(amountLoan == "" || OTPloan =="")
+        {
+          
+          const errorMessage = document.getElementById("error-message-loans");
+            errorMessage.style.display = "block";
+        }
+        else
+        {
+          var popup = document.getElementById('loansPopup');
+          popup.classList.toggle('active');
+          var OpenBankAccountSuccess = document.getElementById('popupPaymentSuccesse');
+          OpenBankAccountSuccess.classList.toggle('active')
+        }
+      }
+      function payForBills(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('billsPopup');
+        popup.classList.toggle('active')
+      }
+      function closeBillPopUp(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('billsPopup');
+        popup.classList.toggle('active')
+      }
+      function confirmBillPayment(){
+        const amountBill = document.getElementById("amountBill").value;
+        const otpBill = document.getElementById("otpBill").value;
+        if(amountBill == "" || otpBill == "")
+        {
+          const errorMessage = document.getElementById("error-message-bills");
+          errorMessage.style.display = "block";
+        }
+        else
+        {
+          var popup = document.getElementById('billsPopup');
+          popup.classList.toggle('active');
+          var OpenBankAccountSuccess = document.getElementById('popupPaymentSuccesse');
+          OpenBankAccountSuccess.classList.toggle('active')
+        }
+      }
+      
+      function displayError(){
+        
+        const errorMessage = document.getElementById("error-bank-account");
+          errorMessage.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

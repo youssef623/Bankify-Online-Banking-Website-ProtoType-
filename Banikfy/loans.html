@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./loansStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="home.html">
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditcard.html">
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit cards</h3>
+            </a>
+            <a href="loans.html" class="active">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loans</h3>
+            </a>
+            <a href="payments.html">
+              <span class="material-symbols-outlined">payments</span>
+              <h3>Payments</h3>
+            </a>
+            <a href="notifications.html">
+              <span class="material-symbols-outlined">notifications</span>
+              <h3>Notifications</h3>
+              <span class="notifications-count">15</span>
+            </a>
+            <a href="report.html">
+              <span class="material-symbols-outlined">report</span>
+              <h3>Report</h3>
+            </a>
+            <a href="clientSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <div class="list-of-loans">
+          <div class="loan" onclick="showtable1()">
+            <span class="material-symbols-outlined">
+              local_atm
+              </span>
+            <div class="loan-type">
+              <h3>Loan Type : Personal</h3>
+              <h3>Loan Amount : 1,200,000 EGP</h3>
+              <h2>Remaining Balance :</h2>
+              <div class="loan-remaining-balance">
+                <h1>750,000 EGP</h1>
+              </div>
+            </div>
+          </div>
+          <div class="loan" onclick="showtable2()">
+            <span class="material-symbols-outlined">
+              local_atm
+              </span>
+            <div class="loan-type">
+              <h3>Loan Type : Mortgage</h3>
+              <h3>Loan Amount : 7,500,000 EGP</h3>
+              <h2>Remaining Balance :</h2>
+              <div class="loan-remaining-balance">
+                <h1>3,950,000 EGP</h1>
+              </div>
+            </div>
+          </div>
+          <div class="loan" onclick="showtable3()">
+            <span class="material-symbols-outlined">
+              local_atm
+              </span>
+            <div class="loan-type">
+              <h3>Loan Type : Car</h3>
+              <h3>Loan Amount : 2,200,000 EGP</h3>
+              <h2>Remaining Balance :</h2>
+              <div class="loan-remaining-balance">
+                <h1>450,000 EGP</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class = "loans-table" id="loansTable1">
+          <h2>Loans installments schedule (Loan 1)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Payment Date</th>
+                <th>Payment</th>
+                <th>Principal<thd>
+                <th>Interest</th>
+                <th>Total Interest</th>
+                <th>Balance</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mar 2019</td>
+                <td>$836.03</td>
+                <td>$218.10</td>
+                <td>$617.94</td>
+                <td>$1,36.69</td>
+                <td>$164,564.62</td>
+                <td><a href="#"class="primary">personal</a></td>
+              </tr>
+              <tr>
+                <td>Apr 2019</td>
+                <td>$836.03</td>
+                <td>$218.91</td>
+                <td>$617.12</td>
+                <td>$1,853.80</td>
+                <td>$164,345.71</td>
+                <td><a href="#"class="primary">personal</a></td>
+              </tr>
+              <tr>
+                <td>May 2019</td>
+                <td>$836.03</td>
+                <td>$219.73</td>
+                <td>$616.30</td>
+                <td>$2,470.10</td>
+                <td>$164,15.98</td>
+                <td><a href="#"class="primary">personal</a></td>
+              </tr>
+              <tr>
+                <td>Jun 2019</td>
+                <td>$836.03</td>
+                <td>$20.56</td>
+                <td>$615.47</td>
+                <td>$3,085.57</td>
+                <td>$163,905.42</td>
+                <td><a href="#"class="primary">personal</a></td>
+              </tr>
+              <tr>
+                <td>Jul 2019</td>
+                <td>$836.03</td>
+                <td>$221.39</td>
+                <td>$614.65</td>
+                <td>$3,700.22</td>
+                <td>$163,684.03</td>
+                <td><a href="#"class="primary">personal</a></td>
+              </tr>
+            </tbody>
+          </table>
+      
+        </div>
+        
+
+        <!--Table2-->
+        <div class = "loans-table" id="loansTable2">
+          <h2>Loans installments schedule (Loan 2)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Payment Date</th>
+                <th>Payment</th>
+                <th>Principal<thd>
+                <th>Interest</th>
+                <th>Total Interest</th>
+                <th>Balance</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mar 2018</td>
+                <td>$512</td>
+                <td>$218.10</td>
+                <td>$100</td>
+                <td>$1,36.70</td>
+                <td>$170,000</td>
+                <td><a href="#"class="primary">Mortage</a></td>
+              </tr>
+              <tr>
+                <td>Apr 2018</td>
+                <td>$900</td>
+                <td>$200</td>
+                <td>$734</td>
+                <td>$1,900</td>
+                <td>$142,000</td>
+                <td><a href="#"class="primary">Mortage</a></td>
+              </tr>
+              <tr>
+                <td>May 2018</td>
+                <td>$855</td>
+                <td>$233</td>
+                <td>$620</td>
+                <td>$2,500</td>
+                <td>$155,000</td>
+                <td><a href="#"class="primary">Mortage</a></td>
+              </tr>
+              <tr>
+                <td>Jun 2018</td>
+                <td>$900</td>
+                <td>$50.20</td>
+                <td>$690.17</td>
+                <td>$2,700.57</td>
+                <td>$140,905.42</td>
+                <td><a href="#"class="primary">Mortage</a></td>
+              </tr>
+              <tr>
+                <td>Jul 2018</td>
+                <td>$350</td>
+                <td>$200</td>
+                <td>$100</td>
+                <td>$3,500.22</td>
+                <td>$122,684.03</td>
+                <td><a href="#"class="primary">Mortage</a></td>
+              </tr>
+            </tbody>
+          </table>
+         
+        </div>
+
+
+        <!--Table3-->
+        <div class = "loans-table" id="loansTable3">
+          <h2>Loans installments schedule (Loan 3)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Payment Date</th>
+                <th>Payment</th>
+                <th>Principal<thd>
+                <th>Interest</th>
+                <th>Total Interest</th>
+                <th>Balance</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mar 2020</td>
+                <td>$878</td>
+                <td>$200.10</td>
+                <td>$620.94</td>
+                <td>$1256</td>
+                <td>$110,564.62</td>
+                <td><a href="#"class="primary">Car</a></td>
+              </tr>
+              <tr>
+                <td>Apr 2020</td>
+                <td>$353.03</td>
+                <td>$142.91</td>
+                <td>$800.12</td>
+                <td>$1,500.80</td>
+                <td>$167,333.71</td>
+                <td><a href="#"class="primary">Car</a></td>
+              </tr>
+              <tr>
+                <td>May 2020</td>
+                <td>$673</td>
+                <td>$128</td>
+                <td>$6708.30</td>
+                <td>$2,,686.10</td>
+                <td>$136</td>
+                <td><a href="#"class="primary">Car</a></td>
+              </tr>
+              <tr>
+                <td>Jun 2020</td>
+                <td>$1100.03</td>
+                <td>$40.56</td>
+                <td>$356.47</td>
+                <td>$4566.57</td>
+                <td>$190,905.42</td>
+                <td><a href="#"class="primary">Car</a></td>
+              </tr>
+              <tr>
+                <td>Jul 2020</td>
+                <td>$906.03</td>
+                <td>$24.39</td>
+                <td>$256.65</td>
+                <td>$3,377.22</td>
+                <td>$163,267</td>
+                <td><a href="#"class="primary">Car</a></td>
+              </tr>
+            </tbody>
+          </table>
+         
+        </div>
+
+      </main>
+      <div class="right">
+        <div class="item applyForLoan">
+          <span class="material-symbols-outlined">
+            description
+            </span>
+          <h3><a href="#" onclick="applyForLoan()">Apply for loan</a></h3>
+        </div>
+      </div>
+    </div>
+    <div class="applyForLoanPopUp" id="popup">
+      <label for="Nationalid">National Id</label>
+      <input type="text" placeholder="National Id" id="NationalID" />
+
+      <label for="Loantype">Loan Type</label>
+      <select>
+        <option value="option1">Personal Loan</option>
+        <option value="option2">Car Loan</option>
+      </select>
+
+      <label for="RequestedAmount">Requested Amount</label>
+      <input type="number" placeholder="Requested Amount" ID="RequestedAmount"/>
+      
+      
+      <label for="NetmonthlyIncome">Net monthly Income</label>
+      <input type="number" placeholder="Net monthly Income" id="MonthlyIncome"/>
+      
+      <label for="EmployerName">Job Title</label>
+      <input type="text" placeholder="Job Title" id="jobTitle"/>
+      
+      <p id="error-message" style="color: red; display: none;">Fill out missing Data</p>
+
+      <div class="close-button">
+        <button id="close-button-popUP" onclick="closePopUp()">Close</button>
+      </div>
+      <div class="confirm-Application-btn">
+        <button id="confirmApplication-btn" onclick="confirmApplication()">Confirm Application</button>
+      </div>
+    </div>
+
+    <div class="popupOpenBankAccountSuccess" id="OpenBankAccountSuccess">
+      <h1>Application Submitted successfully</h1>
+      <div class="close">
+        <button onclick="closePopUpSuccess()" id="openSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+    <script>
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+      function applyForLoan(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+      }
+      function closePopUp(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active')
+      }
+      function confirmApplication(){
+        const nationalID = document.getElementById("NationalID").value;
+        
+        const requestedAmount = document.getElementById("RequestedAmount").value;
+        
+        const MonthlyIncome = document.getElementById("MonthlyIncome").value;
+
+        const jobTitle = document.getElementById("jobTitle").value;
+
+        if(nationalID == "" || requestedAmount=="" || MonthlyIncome == "" || jobTitle=="")
+        {
+
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.style.display = "block";
+        }
+        else
+        {
+          var popup = document.getElementById('popup');
+          popup.classList.toggle('active')
+          var OpenBankAccountSuccess = document.getElementById('OpenBankAccountSuccess');
+          OpenBankAccountSuccess.classList.toggle('active')
+        }
+      }
+      function closePopUpSuccess(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var OpenBankAccountSuccess = document.getElementById('OpenBankAccountSuccess');
+        OpenBankAccountSuccess.classList.toggle('active')
+      }
+      function showtable1(){
+        var loansTable1 = document.getElementById('loansTable1');
+        loansTable1.classList.toggle('active')
+        var element = document.getElementById("loansTable2");
+        var element2 = document.getElementById("loansTable3");
+        if(element.classList.contains("active"))
+        {
+          element.classList.toggle('active')
+        }
+        if(element2.classList.contains("active"))
+        {
+          element2.classList.toggle('active')
+        }
+      }
+      function showtable2(){
+        var loansTable2 = document.getElementById('loansTable2');
+        loansTable2.classList.toggle('active')
+        var element = document.getElementById("loansTable1");
+        var element2 = document.getElementById("loansTable3");
+        if(element.classList.contains("active"))
+        {
+          element.classList.toggle('active')
+        }
+        if(element2.classList.contains("active"))
+        {
+          element2.classList.toggle('active')
+        }
+      }
+      function showtable3(){
+        var loansTable3 = document.getElementById('loansTable3');
+        loansTable3.classList.toggle('active')
+        var element = document.getElementById("loansTable2");
+        var element2 = document.getElementById("loansTable1");
+        if(element.classList.contains("active"))
+        {
+          element.classList.toggle('active')
+        }
+        if(element2.classList.contains("active"))
+        {
+          element2.classList.toggle('active')
+        }
+      }
+    </script>
+  </body>
+</html>

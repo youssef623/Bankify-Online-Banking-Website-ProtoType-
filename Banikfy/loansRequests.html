@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loans Requests</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./loansRequestsStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="bankerHome.html" >
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditCardsRequests.html" >
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit Cards Requests</h3>
+            </a>
+            <a href="#"class="active">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loan Requests</h3>
+            </a>
+            <a href="clientsBanker.html">
+                <span class="material-symbols-outlined">groups</span>
+              <h3>Clients</h3>
+            </a>
+            <a href="reportsBanker.html">
+              <span class="material-symbols-outlined">report</span>
+              <h3>Reports</h3>
+            </a>
+            <a href="bankerSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <div class = "recent-requests">
+          <h2>Loan Requests</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Client Name</th>
+                <th>Loan Type</th>
+                <th>Amount Requested<thd>
+                <th>Monthly Income</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mohamed Hassan</td>
+                <td>Personal</td>
+                <td>EGP 1,250,000</td>
+                <td>EGP 95,000</td>                
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              <tr>
+                <td>Ahmed Hassan</td>
+                <td>Mortgage</td>
+                <td>EGP 2,500,000</td>
+                <td>EGP 75,000</td>
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              <tr>
+                <td>Sayed Hassan</td>
+                <td>Personal</td>
+                <td>EGP 135,000</td>
+                <td>EGP 40,000</td>
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              <tr>
+                <td>Karam Yasser</td>
+                <td>Personal</td>
+                <td>EGP 15,000</td>
+                <td>EGP 3,000</td>
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              <tr>
+                <td>Hassan Yasser</td>
+                <td>Car</td>
+                <td>EGP 4,500,000</td>
+                <td>EGP 255,000</td>
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              <tr>
+                <td>Ibrahim Sayed</td>
+                <td>Personal</td>
+                <td>EGP 150,000</td>
+                <td>EGP 45,000</td>
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              <tr>
+                <td>Amany Karam</td>
+                <td>Car</td>
+                <td>EGP 1,950,000</td>
+                <td>EGP 155,000</td>
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              <tr>
+                <td>Sarah Mohamed</td>
+                <td>Mortgage</td>
+                <td>EGP 1,500,000</td>
+                <td>EGP 15,000</td>
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              <tr>
+                <td>Mohamed Hassan</td>
+                <td>Personal</td>
+                <td>EGP 90,000</td>
+                <td>EGP 20,000</td>
+                <td><a href="#" onclick="accept()" style="color: #41f1b6;">accept</a></td>
+                <td><a href="#" onclick="reject()" style="color: #ff7782;">reject</a></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <!--
+        <div class="main-division">
+        
+          <div class="request">
+            <span class="material-symbols-outlined">
+              credit_card
+              </span>
+            <div class="client-Name">
+              <h2>Client Name : Mohamed Hassan</h2>
+            </div>
+            <div class="credit-score">
+              <h3>Credit Score : 750</h3>
+              <h3 style="margin-left: 1.5rem;">Amount Requested : EGP 45,000</h3>
+            </div>
+            <div class="credit-score">
+              <h3>Monthly Income : EGP15,000</h3>
+              <h3 style="margin-left: 1.5rem;">Employer Name : Orascom Construction</h3>
+            </div>
+            <div class="buttons">
+              <div class="accept-button">
+                <button><h3>accept</h3></button>
+              </div>
+              <div class="close-button">
+                <button><h3>reject</h3></button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        -->
+      </main>
+    </div>
+    
+    <div class="reject" id="rejectPopUp">
+      <h1>Request Rejected</h1>
+      <div class="close">
+        <button onclick="closeReject()" id="closeSuccess  "><h3>Close</h3></button>
+      </div>
+    </div>
+
+    <div class="accept" id="acceptPopUp">
+      <h1>Request accepted</h1>
+      <div class="close">
+        <button onclick="closeAccept()" id="closeSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+
+    <script>
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+     function reject(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('rejectPopUp');
+        popup.classList.toggle('active')
+     }
+     function closeReject()
+     {
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('rejectPopUp');
+        popup.classList.toggle('active')
+     }
+     function accept(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('acceptPopUp');
+        popup.classList.toggle('active')
+     }
+     function closeAccept(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('acceptPopUp');
+        popup.classList.toggle('active')
+     }
+    </script>
+  </body>
+</html>

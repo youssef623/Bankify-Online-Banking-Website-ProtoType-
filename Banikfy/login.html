@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="icon.svg"/>
+    <title>Login Page</title>
+    <style media="screen">
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        color: #e5e5e5;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .Bank{
+        font-weight: bold;
+        font-size: 52px;
+        margin-top: 15px;
+        margin-left: 12px;
+        font-weight: 500;
+        text-align: center ;
+      }
+      body {
+        background-color: #080710;
+      }
+      form {
+        height: 570px;
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.13);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        padding: 50px 35px;
+      }
+      form * {
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+      }
+      
+      label {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      input { 
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      ::placeholder {
+        color: #e5e5e5;
+      }
+      button {
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    
+        transition: all 300ms ease;
+        margin-top: 50px;
+        width: 100%;
+        background-color: #ffffff;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover{
+        background-color: #7380ec;
+      }
+      .signUp {
+        margin-top: -20px;
+      }
+      img {
+        margin-top: -4.3rem;
+        margin-left: 5.2rem;
+        width: 10rem;
+        height: 10rem;
+      }
+      #forget{
+        color: white;
+      }
+      .password
+      {
+        margin-bottom: 1rem;
+      }
+      form .passwordlabel{
+        margin-top: 0.9rem;
+      }
+    </style>
+  </head>
+  <body >
+    <div class="Bank">
+      Bankify
+    </div>
+    <form>
+      <img src="logo2.png" alt="Login Image">
+      <label for="username">Username</label>
+      <input type="text" placeholder="Email or Phone" id="username" />
+      <div class="passwordlabel">
+      <label for="password">Password</label>
+    </div>
+      <div class="password">
+      <input type="password" placeholder="Password" id="password" />
+    </div>
+      <a href="#" onclick="resetPassword()"id="forget"> Forget / Reset Password </a>
+      <button id="login-btn">Log In</button>
+      <div class="signUp">
+        <button id="signUp-btn">Sign Up</button>
+      </div>
+      <p id="error-message" style="color: red; display: none;">Incorrect username or password.</p>
+
+      <p id="error" style="color: red; display: none;">Instructions sent to email</p>
+    </form>
+
+    <script>
+      const loginBtn = document.getElementById("login-btn");
+      loginBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        
+        if(username == "client" && password == "client")
+        {
+          sessionStorage["username"] = username;
+          sessionStorage["password"] = password;
+          window.location.href = "home.html";
+        }
+        else if(username == "banker" && password == "banker")
+        {
+          sessionStorage["username"] = username;
+          sessionStorage["password"] = password;
+          window.location.href = "bankerHome.html";
+        }
+        else if(username == "admin" && password == "admin")
+        {
+          sessionStorage["username"] = username;
+          sessionStorage["password"] = password;
+          window.location.href = "adminHome2.html";
+        }
+        else
+        {
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.style.display = "block";
+        }
+      });
+      const signUpBtn = document.getElementById("signUp-btn");
+
+      signUpBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+          window.location.href = "signup.html";
+        
+      });
+
+      function resetPassword(){
+        
+        const errorMessage = document.getElementById("error");
+          errorMessage.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

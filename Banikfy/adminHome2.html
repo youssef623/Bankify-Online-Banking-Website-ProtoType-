@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./adminHome2.css">    
+  </head>
+  <body onload="">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="#" class="active">
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="manageBankers.html">
+                <span class="material-symbols-outlined">hail</span>
+                <h3>Manage clients and bankers</h3>
+            </a>
+            <a href="issues.html">
+              <span class="material-symbols-outlined">
+                bug_report
+                </span>
+              <h3>Issues</h3>
+            </a>
+            <a href="settingsAdmin.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <div class="monthly-report">
+            
+          <div class="report">
+            <h3 style="color:yellow">Revenue</h3>
+            <div>
+              <details style="color: #7380ec;">
+                <h1>$ 15M</h1>
+                <h6 class="sucess" style="color:red;">-48.5%</h6>
+              </details>
+              <p class="text-muted">compared to $ 28.6M last month</p>
+            </div>
+          </div>
+
+            <div class="report">
+              <h3 style="color: red;">Profit</h3>
+              <div>
+                  <details style="color: #7380ec;">
+                      <h1>$ 6M</h1>
+                      <h6  style="color: red;">-70.5%</h6>
+                  </details>
+                  <p class="text-muted">compared to $ 20.6M last month</p>
+              </div>
+            </div>
+
+            
+            <div class="report">
+              <h3 style="color: lightgreen;">Visitors</h3>
+              <div>
+                  <details style="color: #7380ec;">
+                      <h1>250,635</h1>
+                      <h6 style="color: green;">+12.5%</h6>
+                  </details>
+                  <p class="text-muted">compared to 220,533 last month</p>
+              </div>
+            </div>
+
+            <div class="report">
+              <h3 style="color: blue;">New Clients</h3>
+              <div>
+                  <details style="color: #7380ec;">
+                      <h1>50,365</h1>
+                      <h6 style="color: green;">+60.5%</h6>
+                  </details>
+                  <p class="text-muted">compared to 20,654 last month</p>
+              </div>
+            </div>
+        </div>
+
+
+        <canvas id="chart" class="chart">
+          
+        </canvas>
+      </main>
+      <div class="right"></div>
+    </div>
+    
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      const chart = document.querySelector('#chart').getContext('2d');
+      new Chart(chart,{
+        type:'line',
+        data: {
+          labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+          datasets:[{
+            label:'New Clients',
+            data:[1500,3500,4000,7000,15000,23545,29534,29600,30564,40545,20533,50635],
+            borderColor:'blue',
+            borderWidth:3
+          },
+          {
+            label: 'Revenue Generated',
+            data:[2400000,7400000,5400000,12400000,15400000,15500000,8400000,20400000,20400000,18000000,28600000,15000000],
+            borderColor:'yellow',
+            borderWidth:3
+          },
+          {
+            label: 'Profit',
+            data:[400000,2400000,1400000,5400000,8400000,8500000,1400000,13400000,12400000,10000000,20600000,6000000],
+            borderColor:'red',
+            borderWidth:3
+          },
+          {
+            label: 'visitors',
+            data:[6500,15500,24000,37000,115000,123545,129534,129600,130564,140545,220533,250635],
+            borderColor:'lightgreen',
+            borderWidth:3
+          }
+          ]
+        }
+      })
+    </script>
+  </body>
+</html>

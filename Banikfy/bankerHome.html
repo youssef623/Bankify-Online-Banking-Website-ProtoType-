@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./bankerHomeStyle.css">    
+  </head>
+  <body onload="checkCredentials()">
+    <div class="container" id="blur">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="./logo2.png">
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+            <a href="#" class="active">
+              <span class="material-symbols-outlined">home</span>
+              <h3>Home</h3>
+            </a>
+            <a href="creditCardsRequests.html">
+              <span class="material-symbols-outlined">credit_card</span>
+              <h3>Credit Cards Requests</h3>
+            </a>
+            <a href="loansRequests.html">
+              <span class="material-symbols-outlined">
+                local_atm
+                </span>
+              <h3>Loan Requests</h3>
+            </a>
+            <a href="clientsBanker.html">
+              <span class="material-symbols-outlined">groups</span>
+              <h3>Clients</h3>
+            </a>
+            <a href="reportsBanker.html">
+              <span class="material-symbols-outlined">report</span>
+              <h3>Reports</h3>
+            </a>
+            <a href="bankerSettings.html" id="settings-icon">
+              <span class="material-symbols-outlined">
+                settings
+                </span>
+                <h3>settings</h3>
+            </a>
+            <a href="login.html">
+              <span class="material-symbols-outlined">logout</span>
+              <h3>Logout</h3>
+            </a>
+        </div>
+      </aside>
+      <main>
+        <div class="monthly-report">
+            
+          
+
+            
+            <div class="report">
+              <h3 style="color: lightgreen;">Complaints</h3>
+              <div>
+                  <details style="color: #7380ec;">
+                      <h1>250,635</h1>
+                      <h6 style="color: green;">+12.5%</h6>
+                  </details>
+                  <p class="text-muted">compared to 220,533 last month</p>
+              </div>
+            </div>
+
+            <div class="report">
+              <h3 style="color: blue;">Performance</h3>
+              <div>
+                  <details style="color: #7380ec;">
+                      <h1>50,365</h1>
+                      <h6 style="color: green;">+60.5%</h6>
+                  </details>
+                  <p class="text-muted">compared to 20,654 last month</p>
+              </div>
+            </div>
+        </div>
+
+
+        <canvas id="chart" class="chart">
+          
+        </canvas>
+        
+      </main>
+      <div class="right">
+        <div class="item send-announcment">
+          <span class="material-symbols-outlined">campaign</span>
+          <h3><a href="#" onclick="sendAnnouncementOpen()">Send Announcement</a></h3>
+        </div>
+      </div>
+    </div>
+    
+    <div class="popUp-send-Announcements" id="send-announcment-popup">
+      <label for="Reminder">Close Bank Account</label>
+      <select>
+        <option value="option1">All Clients</option>
+        <option value="option2">VIP Clients</option>
+        <option value="option3">Normal Clients</option>
+      </select>
+      <div class="description">
+        <input type="text" placeholder="Announcement" id="closeBankPassword"/>
+      </div>
+      <div class="close-button">
+        <button id="close-btn-popup-closeBankAccount" onclick="closeSendAnnouncement()">Close</button>
+      </div>
+      <div class="close-BankAccount-btn">
+        <button id="setReminder-btn" onclick="sendAnnouncement()">Send Announcement</button>
+      </div>
+    </div>
+
+
+    <div class="popupSendAnnouncementSuccess" id="SendAnnouncementSuccess">
+      <h1>Announcement Send successfully</h1>
+      <div class="close">
+        <button onclick="closeSendAnnouncementSuccess()" id="closeSuccess"><h3>Close</h3></button>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js" integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+ const chart = document.querySelector('#chart').getContext('2d');
+      new Chart(chart,{
+        type:'line',
+        data: {
+          labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+          datasets:[{
+            label:'Complaints',
+            data:[1500,3500,4000,7000,15000,23545,29534,29600,30564,40545,20533,50635],
+            borderColor:'blue',
+            borderWidth:3
+          },
+          
+          {
+            label: 'performance',
+            data:[6500,15500,24000,37000,115000,123545,129534,129600,130564,140545,220533,250635],
+            borderColor:'lightgreen',
+            borderWidth:3
+          }
+          ]
+        }
+      })
+
+      function checkCredentials(){
+        if(sessionStorage["username"] == null)
+        {
+          window.location.href = "login.html";
+        }
+      }
+      function sendAnnouncementOpen(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('send-announcment-popup');
+        popup.classList.toggle('active')
+      }
+     function closeSendAnnouncement(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('send-announcment-popup');
+        popup.classList.toggle('active')
+     }
+     function sendAnnouncement(){
+        
+        var popup = document.getElementById('SendAnnouncementSuccess');
+        popup.classList.toggle('active')
+        var popup = document.getElementById('send-announcment-popup');
+        popup.classList.toggle('active')
+     }
+     function closeSendAnnouncementSuccess(){
+      
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active')
+        var popup = document.getElementById('SendAnnouncementSuccess');
+        popup.classList.toggle('active')
+     }
+    </script>
+  </body>
+</html>
